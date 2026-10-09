@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -57,6 +58,7 @@ article,
     border-radius: 8px;
 }
 
+/* Headings */
 h2 {
     font-family: Georgia, serif;
     font-size: 36px;
@@ -69,9 +71,18 @@ h3 {
     margin-top: 40px;
 }
 
+/* Paragraphs */
 p {
     line-height: 1.7;
     font-size: 17px;
+}
+
+/* Home page image */
+.home-image {
+    width: 250px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 30px;
 }
 
 /* Works page */
@@ -109,4 +120,69 @@ footer {
     padding: 20px 60px;
     border-top: 1px solid #d5cec5;
     color: #555;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+
+    /* Navigation moves to the top */
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .sidebar nav a {
+        font-size: 16px;
+    }
+
+    /* Main content fits the screen */
+    main {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    /* Reduce space inside content sections */
+    article,
+    .intro,
+    .literary-success,
+    .works {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 21px;
+        margin-top: 25px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Display one book per row */
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .work img {
+        height: 250px;
+    }
+
+    footer {
+        margin-left: 0;
+        padding: 15px 20px;
+    }
 }
