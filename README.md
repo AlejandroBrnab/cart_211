@@ -6,5 +6,5 @@
 
 
 ## Assessment 3 and 4
-- [Link to assessment 2 website](https://alejandrobrnab.github.io/cart_211/assesment3/index.html)
-- [Link to assessment 2 code](https://github.com/AlejandroBrnab/cart_211/tree/main/assesment3)
+- [Link to assessment 3 and 4 website](https://alejandrobrnab.github.io/cart_211/assesment3/index.html)
+- [Link to assessment 3 and 4 code](https://github.com/AlejandroBrnab/cart_211/tree/main/assesment3)
