@@ -1,4 +1,3 @@
-
 /* =========================================================
    HUMANS OF NEW YORK — BOLD EDITORIAL DESIGN
    ========================================================= */
@@ -24,11 +23,10 @@ body {
     padding: 0;
     margin: 0;
 
-    background: #f5f4ef;
+    background: #E8EEF8;
     color: #17213c;
 
     overflow-x: hidden;
-
     -webkit-font-smoothing: antialiased;
 
     position: relative;
@@ -38,7 +36,6 @@ body {
 /* Decorative background shapes */
 body::before {
     content: "";
-
     position: absolute;
     z-index: -1;
 
@@ -56,7 +53,6 @@ body::before {
 
 body::after {
     content: "";
-
     position: absolute;
     z-index: -1;
 
@@ -67,12 +63,10 @@ body::after {
     height: 25px;
 
     background: #ff5c5c;
-
     transform: rotate(25deg);
 
     pointer-events: none;
 }
-
 
 /* Responsive images */
 img {
@@ -95,7 +89,7 @@ img {
 
 
 /* ---------------------------------------------------------
-   3. NAVIGATION
+   3. NAVIGATION — DESKTOP
    --------------------------------------------------------- */
 
 nav {
@@ -111,8 +105,10 @@ nav {
     padding-bottom: 18px;
 
     border-bottom: 3px solid #17213c;
-}
 
+    position: relative;
+    z-index: 1001;
+}
 
 /* Logo */
 .logo img {
@@ -129,7 +125,6 @@ nav {
     transform: rotate(-2deg) scale(1.03);
     filter: brightness(0.9);
 }
-
 
 /* Navigation links */
 nav a {
@@ -148,8 +143,7 @@ nav a:hover {
     color: #3d6bff;
 }
 
-
-/* Menu */
+/* Desktop menu */
 .menu1 {
     display: flex;
     justify-content: flex-end;
@@ -164,7 +158,6 @@ nav a:hover {
     text-align: right;
     position: relative;
 }
-
 
 /* Hover underline */
 .menuI::after {
@@ -185,7 +178,6 @@ nav a:hover {
 .menuI:hover::after {
     width: 100%;
 }
-
 
 /* Active navigation link */
 .menuI_active {
@@ -259,8 +251,9 @@ h1 {
     color: #17213c;
 
     max-width: 1000px;
-}
 
+    text-shadow: 3px 3px 0 rgba(61, 107, 255, 0.12);
+}
 
 /* Yellow accent behind the main title */
 h1::before {
@@ -276,10 +269,8 @@ h1::before {
     height: 45%;
 
     background: #ffd447;
-
     transform: rotate(-2deg);
 }
-
 
 /* Small decorative circle beside the title */
 h1::after {
@@ -301,7 +292,6 @@ h1::after {
     pointer-events: none;
 }
 
-
 /* Supporting headings */
 header h2 {
     margin-top: 0;
@@ -312,7 +302,6 @@ header h2 {
 
     color: #3d6bff;
 }
-
 
 /* Story title */
 .stories_title {
@@ -338,6 +327,8 @@ header h2 {
 
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+
+    box-shadow: 5px 5px 0 #ffd447;
 }
 
 header h3 {
@@ -357,7 +348,7 @@ header h3 {
 
 .intro {
     font-size: clamp(1.2rem, 2vw, 2rem);
-    line-height: 1.4;
+    line-height: 1.5;
 
     margin-bottom: 1.5em;
 
@@ -369,22 +360,24 @@ header h3 {
     letter-spacing: -0.015em;
 
     color: #29334d;
-}
 
+    background: rgba(255, 255, 255, 0.45);
+    padding: 22px 25px;
+
+    border-radius: 4px 12px 12px 4px;
+
+    box-shadow: 0 8px 24px rgba(23, 33, 60, 0.05);
+}
 
 /* First introduction paragraph: coral accent */
 .intro:first-of-type {
     margin-top: 0;
-
     border-left: 7px solid #ff5c5c;
-    padding-left: 20px;
 }
-
 
 /* Second introduction paragraph: blue accent */
 .intro:nth-of-type(2) {
     border-left: 7px solid #3d6bff;
-    padding-left: 20px;
 }
 
 
@@ -400,6 +393,11 @@ section {
 article h3 {
     margin-bottom: 10px;
     color: #3d6bff;
+
+    display: inline-block;
+    padding-bottom: 6px;
+
+    border-bottom: 4px solid #ffd447;
 }
 
 
@@ -412,7 +410,7 @@ article h3 {
 
     grid-template-columns: repeat(12, 1fr);
 
-    gap: 14px;
+    gap: 18px;
 
     margin: 90px 0 0 0;
     padding: 0;
@@ -421,7 +419,6 @@ article h3 {
 
     position: relative;
 }
-
 
 /* Small decorative diamond near the gallery */
 .pict::before {
@@ -437,12 +434,10 @@ article h3 {
     height: 22px;
 
     background: #ffd447;
-
     transform: rotate(45deg);
 
     pointer-events: none;
 }
-
 
 /* Figures */
 .pict figure {
@@ -454,13 +449,17 @@ article h3 {
     cursor: pointer;
     margin: 0;
 
-    background: #17213c;
+    background: #ffffff;
+    padding: 7px;
+
+    border-radius: 4px;
+
+    box-shadow: 0 8px 20px rgba(23, 33, 60, 0.12);
 
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease;
 }
-
 
 /* Images */
 .pict img {
@@ -476,24 +475,30 @@ article h3 {
         filter 0.5s ease;
 }
 
+/* Gallery hover */
+.pict figure:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(23, 33, 60, 0.2);
+    z-index: 2;
+}
+
 
 /* ---------------------------------------------------------
    9. IMAGE HOVER EFFECT
    --------------------------------------------------------- */
-
 
 /* Colour overlay */
 .pict figure::after {
     content: "";
 
     position: absolute;
-    inset: 0;
+    inset: 7px;
 
     background: linear-gradient(
         135deg,
-        rgba(61, 107, 255, 0.7),
-        rgba(255, 92, 92, 0.6),
-        rgba(255, 212, 71, 0.4)
+        rgba(61, 107, 255, 0.55),
+        rgba(255, 92, 92, 0.45),
+        rgba(255, 212, 71, 0.35)
     );
 
     mix-blend-mode: multiply;
@@ -505,13 +510,11 @@ article h3 {
     pointer-events: none;
 }
 
-
 /* Image zoom */
 .pict figure:hover img {
-    transform: scale(1.07);
+    transform: scale(1.06);
     filter: saturate(1.15) contrast(1.05);
 }
-
 
 /* Show colourful overlay */
 .pict figure:hover::after {
@@ -529,16 +532,17 @@ article h3 {
     position: absolute;
     z-index: 3;
 
-    left: 20px;
-    bottom: 18px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
 
     color: white;
 
-    padding: 8px 12px;
+    padding: 12px 14px;
 
-    background: #17213c;
+    background: rgba(23, 33, 60, 0.94);
 
-    border-radius: 0;
+    border-left: 5px solid #ffd447;
 
     white-space: normal;
 
@@ -546,11 +550,11 @@ article h3 {
     font-weight: 800;
 
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
 
     opacity: 0;
 
-    transform: translateY(12px) rotate(-1deg);
+    transform: translateY(12px);
 
     transition:
         opacity 0.35s ease,
@@ -559,7 +563,7 @@ article h3 {
 
 .pict figure:hover .hover-text {
     opacity: 1;
-    transform: translateY(0) rotate(-1deg);
+    transform: translateY(0);
 }
 
 
@@ -691,7 +695,6 @@ article h3 {
     position: relative;
 }
 
-
 /* Yellow frame behind the story image */
 .left_stories::before {
     content: "";
@@ -714,6 +717,10 @@ article h3 {
 
     display: block;
 
+    border: 8px solid #ffffff;
+
+    box-shadow: 0 12px 30px rgba(23, 33, 60, 0.13);
+
     transition:
         transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -722,7 +729,7 @@ article h3 {
     grid-column: 9 / 13;
 
     margin: 0;
-    padding: 0 20px 0 0;
+    padding: 25px 25px 15px;
 
     font-size: 1.15em;
     line-height: 1.75em;
@@ -730,16 +737,23 @@ article h3 {
     text-align: left;
 
     color: #222222;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    border-top: 7px solid #3d6bff;
+    border-radius: 4px;
+
+    box-shadow: 0 10px 25px rgba(23, 33, 60, 0.06);
 }
 
 .stories p {
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
-
 /* Drop cap */
-.stories::first-letter {
-    font-size: 4em;
+.stories p:first-of-type::first-letter {
+    font-size: 3.5em;
 
     font-weight: 900;
 
@@ -749,6 +763,10 @@ article h3 {
     padding-right: 8px;
 
     color: #ff5c5c;
+}
+
+.stories p:last-child {
+    margin-bottom: 0;
 }
 
 
@@ -784,8 +802,7 @@ article h3 {
     border-top: 3px solid #17213c;
 }
 
-
-/* Coral accent on the social section border */
+/* Coral accent */
 .social-section::before {
     content: "";
 
@@ -902,6 +919,9 @@ footer {
     font-style: normal;
 
     color: #6d7180;
+
+    border-top: 2px solid rgba(23, 33, 60, 0.15);
+    padding-top: 18px;
 }
 
 footer a {
@@ -940,16 +960,22 @@ footer a {
 
         border-bottom: 3px solid #17213c;
 
-        background: transparent;
+        position: relative;
+        z-index: 1001;
     }
 
-    .menu1 {
+    /* Keep desktop links hidden on smaller screens */
+    nav > .menu1 {
         display: none;
+    }
+
+    /* Open mobile menu */
+    nav > .menu1.menu-deployed {
+        display: flex;
 
         position: fixed;
 
-        top: 0;
-        left: 0;
+        inset: 0;
 
         width: 100%;
         height: 100vh;
@@ -966,7 +992,7 @@ footer a {
         z-index: 1000;
     }
 
-    .menu1 a {
+    .menu1.menu-deployed a {
         color: white;
 
         font-size: 2rem;
@@ -975,16 +1001,16 @@ footer a {
         letter-spacing: 0.08em;
     }
 
-    .menu1 a:hover {
+    .menu1.menu-deployed a:hover {
         color: #ffd447;
     }
 
-    .menu1 .menuI_active {
+    .menu1.menu-deployed .menuI_active {
         color: #17213c;
         background: #ffd447;
     }
 
-    .menu1 .close-menu {
+    .menu1.menu-deployed .close-menu {
         display: block;
 
         position: absolute;
@@ -1001,12 +1027,10 @@ footer a {
         cursor: pointer;
     }
 
-    .menu-deployed {
-        display: flex;
-    }
-
     .hamburger-menu {
         display: flex;
+        align-items: center;
+        justify-content: flex-end;
     }
 
     .hamburger-menu button {
@@ -1091,7 +1115,6 @@ footer a {
         object-fit: cover;
     }
 
-
     /* Colour accents for mobile gallery */
     .pict figure:nth-child(3n) {
         border-bottom: 5px solid #3d6bff;
@@ -1104,7 +1127,6 @@ footer a {
     .pict figure:nth-child(3n + 2) {
         border-bottom: 5px solid #ffd447;
     }
-
 
     /* Don't use desktop zoom on touch-sized layouts */
     .pict figure:hover img {
@@ -1126,7 +1148,7 @@ footer a {
     .stories {
         grid-column: 1 / 3;
 
-        padding: 35px 0 0;
+        padding: 22px 20px;
 
         font-size: 1.1em;
         line-height: 1.7em;
@@ -1208,9 +1230,9 @@ footer a {
 
     .intro {
         font-size: 1.15rem;
+        padding: 18px 18px;
 
         border-left-width: 5px;
-        padding-left: 15px;
     }
 
     .intro:nth-of-type(2) {
@@ -1231,8 +1253,9 @@ footer a {
     }
 
     .hover-text {
-        left: 10px;
-        bottom: 10px;
+        left: 7px;
+        right: 7px;
+        bottom: 7px;
 
         font-size: 0.65rem;
         letter-spacing: 0.08em;
@@ -1246,6 +1269,10 @@ footer a {
     .left_stories::before {
         top: 7px;
         left: 7px;
+    }
+
+    .stories {
+        padding: 18px 14px;
     }
 }
 
