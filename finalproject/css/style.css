@@ -1,0 +1,728 @@
+/* =========================================================
+   THE ATTENTION TRAP
+   Prototype stylesheet
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   GENERAL
+   --------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #111111;
+    color: #f2f2e9;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION
+   --------------------------------------------------------- */
+
+.navbar {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 24px 5%;
+
+    border-bottom: 1px solid #333333;
+
+    position: sticky;
+    top: 0;
+
+    background: rgba(17, 17, 17, 0.95);
+
+    z-index: 10;
+}
+
+.logo {
+    color: #f2f2e9;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+
+    gap: 25px;
+}
+
+nav a {
+    color: #999999;
+
+    text-decoration: none;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 1px;
+}
+
+nav a:hover,
+nav a.active {
+    color: #c8ff00;
+}
+
+
+/* ---------------------------------------------------------
+   GENERAL PAGE
+   --------------------------------------------------------- */
+
+main {
+    flex: 1;
+}
+
+.page {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 100px 0;
+}
+
+.label {
+    color: #c8ff00;
+
+    font-family: monospace;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: clamp(3rem, 9vw, 8rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    max-width: 1000px;
+
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 1.5rem;
+
+    margin-bottom: 20px;
+
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: #bdbdb7;
+
+    max-width: 650px;
+
+    margin-bottom: 20px;
+}
+
+.large-text {
+    color: #f2f2e9;
+
+    font-size: 2rem;
+
+    max-width: 800px;
+
+    margin-bottom: 80px;
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.hero {
+    min-height: 90vh;
+
+    width: 90%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 120px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 12vw, 11rem);
+
+    margin-bottom: 40px;
+}
+
+.intro {
+    font-size: 1.3rem;
+
+    max-width: 600px;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTON
+   --------------------------------------------------------- */
+
+.button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 20px;
+
+    padding: 15px 25px;
+
+    background: #c8ff00;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background: #f2f2e9;
+}
+
+
+/* ---------------------------------------------------------
+   INTRO SECTION
+   --------------------------------------------------------- */
+
+.intro-section {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 100px auto;
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 40px;
+}
+
+.section-number {
+    color: #c8ff00;
+
+    font-family: monospace;
+
+    font-size: 1.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   STATEMENT
+   --------------------------------------------------------- */
+
+.statement {
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px;
+}
+
+.statement p {
+    color: #c8ff00;
+
+    font-size: clamp(3rem, 10vw, 9rem);
+
+    font-weight: bold;
+
+    line-height: 0.9;
+
+    max-width: 1000px;
+}
+
+.statement.small p {
+    font-size: clamp(2rem, 6vw, 5rem);
+}
+
+
+/* ---------------------------------------------------------
+   CONTENT GRID
+   --------------------------------------------------------- */
+
+.content-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: start;
+}
+
+
+/* ---------------------------------------------------------
+   DIAGRAM
+   --------------------------------------------------------- */
+
+.diagram {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.circle {
+    width: 160px;
+
+    height: 160px;
+
+    border: 2px solid #c8ff00;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #c8ff00;
+
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 2rem;
+
+    color: #c8ff00;
+
+    margin: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   QUOTE
+   --------------------------------------------------------- */
+
+.quote {
+    border-top: 1px solid #333333;
+
+    border-bottom: 1px solid #333333;
+
+    padding: 60px 0;
+
+    margin-top: 100px;
+}
+
+.quote p {
+    color: #f2f2e9;
+
+    font-size: 2rem;
+
+    font-weight: bold;
+}
+
+
+/* ---------------------------------------------------------
+   TIMELINE
+   --------------------------------------------------------- */
+
+.timeline {
+    border-left: 2px solid #c8ff00;
+
+    margin-left: 30px;
+
+    padding-left: 40px;
+}
+
+.timeline-item {
+    margin-bottom: 80px;
+}
+
+.timeline-item span {
+    color: #c8ff00;
+
+    font-family: monospace;
+
+    font-size: 1.2rem;
+}
+
+.timeline-item h2 {
+    margin-top: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   THREE COLUMNS
+   --------------------------------------------------------- */
+
+.three-columns {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.info-card {
+    border: 1px solid #333333;
+
+    padding: 30px;
+
+    min-height: 250px;
+}
+
+.info-card span {
+    color: #c8ff00;
+
+    font-family: monospace;
+}
+
+
+/* ---------------------------------------------------------
+   ALGORITHM
+   --------------------------------------------------------- */
+
+.algorithm {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.algorithm button {
+    background: transparent;
+
+    color: #f2f2e9;
+
+    border: 1px solid #555555;
+
+    padding: 20px;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+.algorithm button:hover {
+    border-color: #c8ff00;
+
+    color: #c8ff00;
+}
+
+.interactive-box {
+    border: 1px solid #333333;
+
+    padding: 40px;
+
+    min-height: 180px;
+}
+
+
+/* ---------------------------------------------------------
+   FEATURE LIST
+   --------------------------------------------------------- */
+
+.feature-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2px;
+
+    background: #333333;
+}
+
+.feature-list article {
+    background: #111111;
+
+    padding: 40px;
+
+    min-height: 250px;
+}
+
+.feature-list span {
+    color: #c8ff00;
+
+    font-family: monospace;
+}
+
+
+/* ---------------------------------------------------------
+   PHONE
+   --------------------------------------------------------- */
+
+.platform-layout {
+    display: grid;
+
+    grid-template-columns: 300px 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.phone {
+    width: 260px;
+
+    height: 500px;
+
+    border: 5px solid #f2f2e9;
+
+    border-radius: 30px;
+
+    padding: 15px;
+
+    margin: auto;
+}
+
+.phone-screen {
+    height: 100%;
+
+    border: 1px solid #444444;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.phone-screen p {
+    font-size: 0.8rem;
+
+    color: #f2f2e9;
+}
+
+.fake-video {
+    height: 300px;
+
+    background: #222222;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #c8ff00;
+
+    font-weight: bold;
+}
+
+
+/* ---------------------------------------------------------
+   SOCIAL MEDIA MOCKUP
+   --------------------------------------------------------- */
+
+.social-card {
+    max-width: 400px;
+
+    border: 1px solid #333333;
+
+    padding: 20px;
+}
+
+.fake-post {
+    height: 400px;
+
+    background: #222222;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #c8ff00;
+}
+
+.post-actions {
+    padding-top: 15px;
+
+    color: #f2f2e9;
+}
+
+
+/* ---------------------------------------------------------
+   COMPARISON
+   --------------------------------------------------------- */
+
+.comparison {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.platform-card {
+    border: 1px solid #333333;
+
+    padding: 40px;
+}
+
+.platform-card h2 {
+    color: #c8ff00;
+}
+
+.platform-card p {
+    border-bottom: 1px solid #333333;
+
+    padding-bottom: 10px;
+}
+
+
+/* ---------------------------------------------------------
+   QUESTIONS
+   --------------------------------------------------------- */
+
+.reflection {
+    max-width: 800px;
+
+    margin-top: 80px;
+}
+
+.question {
+    border-top: 1px solid #444444;
+
+    padding: 30px 0;
+}
+
+.question p {
+    color: #f2f2e9;
+
+    font-size: 1.5rem;
+}
+
+.final-message {
+    margin: 100px 0;
+
+    border-left: 4px solid #c8ff00;
+
+    padding-left: 30px;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+footer {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 0;
+
+    border-top: 1px solid #333333;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+footer a {
+    color: #999999;
+
+    text-decoration: none;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 1px;
+}
+
+footer a:hover {
+    color: #c8ff00;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   Basic only — this is still a prototype.
+   --------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+    nav {
+        display: none;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .content-grid,
+    .three-columns,
+    .comparison,
+    .platform-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .algorithm {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-section {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-layout {
+        gap: 50px;
+    }
+
+}
