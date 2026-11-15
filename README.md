@@ -12,3 +12,7 @@
 ## Assessment 5 and 6
 - [Link to assessment 5 and 6 website](https://alejandrobrnab.github.io/cart_211/assessment5/index.html)
 - [Link to assessment 5 and 6 code](https://github.com/AlejandroBrnab/cart_211/tree/main/assessment5)
+
+## Final Project
+- [Link to final project website](https://alejandrobrnab.github.io/cart_211/finalproject/index.html)
+- [Link to final project code](https://github.com/AlejandroBrnab/cart_211/tree/main/finalproject)
