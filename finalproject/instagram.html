@@ -1,98 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Instagram</title>
-
+    <title>Instagram — The Attention Trap</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
-<header class="navbar">
-
-    <a href="index.html" class="logo">
-        THE ATTENTION TRAP
-    </a>
-
-    <nav>
+<header class="site-header">
+    <a class="logo" href="index.html">THE ATTENTION TRAP<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
+    <nav class="site-nav">
         <a href="index.html">HOME</a>
         <a href="dopamine.html">THE PROBLEM</a>
         <a href="algorithm.html">ALGORITHMS</a>
         <a href="instagram.html" class="active">PLATFORMS</a>
         <a href="action.html">TAKE ACTION</a>
     </nav>
-
 </header>
 
-<main class="page">
+<main class="page-shell platform-page">
+    <div class="page-topline"><span>08 / 10</span><span>PLATFORM / INSTAGRAM</span></div>
 
-    <p class="label">08 / PLATFORM</p>
-
-    <h1>INSTAGRAM</h1>
-
-    <p class="large-text">
-        THE SOCIAL LOOP
-    </p>
-
-    <section class="content-grid">
-
-        <div class="social-card">
-
-            <div class="fake-post">
-                PHOTO
-            </div>
-
-            <div class="post-actions">
-                ♡ &nbsp; 1,248 likes
-            </div>
-
+    <section class="instagram-hero">
+        <div class="instagram-title">
+            <p class="eyebrow">IMAGE / SOCIAL VALIDATION / REELS</p>
+            <h1>INSTAGRAM.</h1>
         </div>
 
+        <div class="social-post">
+            <div class="social-image image-placeholder">
+                <span>IMAGE</span>
+                <small>Suggested: staged lifestyle image / Instagram-style photo</small>
+            </div>
+            <div class="social-actions">
+                <button class="like-button" aria-pressed="false">♡</button>
+                <span>1,248 likes</span>
+                <span>•••</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="two-column-text instagram-copy">
         <div>
-
+            <p class="eyebrow">THE SOCIAL LOOP</p>
             <h2>LIKES. STORIES. REELS.</h2>
-
-            <p>
-                Instagram combines visual content,
-                social validation and personalized
-                recommendations.
-            </p>
-
-            <p>
-                Each interaction can become another
-                reason to return to the platform.
-            </p>
-
         </div>
-
+        <div>
+            <p>
+                Instagram combines visual content, social interaction and
+                personalized recommendations. The platform is not only a
+                place to consume content; it is also a place to monitor
+                how other people respond to you.
+            </p>
+            <p>
+                That creates another kind of loop: post, wait, check,
+                receive feedback, repeat.
+            </p>
+        </div>
     </section>
 
-    <section class="statement small">
-
-        <p>
-            "WHAT DID I MISS?"
-        </p>
-
+    <section class="notification-demo">
+        <div class="notification-card">
+            <span>NEW ACTIVITY</span>
+            <strong>Someone liked your post.</strong>
+        </div>
+        <div class="notification-card">
+            <span>NEW REEL</span>
+            <strong>Recommended for you.</strong>
+        </div>
+        <div class="notification-card">
+            <span>NEW STORY</span>
+            <strong>Don't miss it.</strong>
+        </div>
     </section>
-
 </main>
 
-<footer>
-
+<footer class="page-footer">
     <a href="tiktok.html">← PREVIOUS</a>
-
     <a href="youtube-facebook.html">NEXT →</a>
-
 </footer>
 
 <script src="js/script.js"></script>
-
 </body>
-
 </html>

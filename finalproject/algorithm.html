@@ -1,88 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Behind the Algorithm</title>
-
+    <title>Behind the Algorithm — The Attention Trap</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
-<header class="navbar">
-
-    <a href="index.html" class="logo">
-        THE ATTENTION TRAP
-    </a>
-
-    <nav>
+<header class="site-header">
+    <a class="logo" href="index.html">THE ATTENTION TRAP<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
+    <nav class="site-nav">
         <a href="index.html">HOME</a>
         <a href="dopamine.html">THE PROBLEM</a>
         <a href="algorithm.html" class="active">ALGORITHMS</a>
         <a href="tiktok.html">PLATFORMS</a>
         <a href="action.html">TAKE ACTION</a>
     </nav>
-
 </header>
 
-<main class="page">
+<main class="page-shell">
+    <div class="page-topline"><span>05 / 10</span><span>ALGORITHMS</span></div>
 
-    <p class="label">05 / ALGORITHMS</p>
-
-    <h1>BEHIND THE ALGORITHM</h1>
-
-    <p class="large-text">
-        What you see is not completely random.
-    </p>
-
-    <section class="algorithm">
-
-        <button onclick="showStep(1)">
-            01 — COLLECT
-        </button>
-
-        <button onclick="showStep(2)">
-            02 — ANALYZE
-        </button>
-
-        <button onclick="showStep(3)">
-            03 — RECOMMEND
-        </button>
-
-        <button onclick="showStep(4)">
-            04 — MEASURE
-        </button>
-
+    <section class="page-hero split-hero">
+        <div>
+            <p class="eyebrow">COLLECT / ANALYZE / RECOMMEND / MEASURE</p>
+            <h1>BEHIND<br>THE<br><em>ALGORITHM.</em></h1>
+        </div>
+        <div class="image-placeholder">
+            <span>IMAGE PLACEHOLDER</span>
+            <small>Suggested: abstract recommendation-system graphic</small>
+        </div>
     </section>
 
-    <div id="algorithm-info" class="interactive-box">
+    <section class="algorithm-section">
+        <div class="algorithm-tabs">
+            <button class="algorithm-tab active" data-step="collect">01 / COLLECT</button>
+            <button class="algorithm-tab" data-step="analyze">02 / ANALYZE</button>
+            <button class="algorithm-tab" data-step="recommend">03 / RECOMMEND</button>
+            <button class="algorithm-tab" data-step="measure">04 / MEASURE</button>
+        </div>
 
-        <h2>SELECT A STEP</h2>
+        <div class="algorithm-display">
+            <p class="eyebrow" id="algorithm-label">01 / COLLECT</p>
+            <h2 id="algorithm-title">WHAT DO YOU DO?</h2>
+            <p id="algorithm-text">
+                Platforms can gather signals from interactions such as
+                clicks, likes, searches, views and time spent with content.
+            </p>
+        </div>
+    </section>
 
-        <p>
-            Click one of the steps above to see how the
-            recommendation process works.
-        </p>
+    <section class="feed-demo">
+        <div class="feed-header">
+            <span>YOUR FEED</span>
+            <span>PERSONALIZED</span>
+        </div>
 
-    </div>
-
+        <div class="feed-card">
+            <div class="feed-image image-placeholder">
+                <span>CONTENT</span>
+            </div>
+            <div class="feed-copy">
+                <span class="tiny-label">RECOMMENDED FOR YOU</span>
+                <h2>THE NEXT THING YOU SEE WAS SELECTED SOMEWHERE.</h2>
+                <p>Scroll ↓</p>
+            </div>
+        </div>
+    </section>
 </main>
 
-<footer>
-
+<footer class="page-footer">
     <a href="attention.html">← PREVIOUS</a>
-
     <a href="design.html">NEXT →</a>
-
 </footer>
 
 <script src="js/script.js"></script>
-
 </body>
-
 </html>

@@ -1,76 +1,147 @@
 /* =========================================================
-   THE ATTENTION TRAP
-   Prototype JavaScript
+   THE ATTENTION TRAP — INTERACTIONS
    ========================================================= */
 
-/*
- * Algorithm interaction
- *
- * The visitor clicks on one of the four steps
- * to reveal a short explanation.
- */
+document.addEventListener("DOMContentLoaded", () => {
 
-function showStep(step) {
+    /* Mobile navigation */
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".site-nav");
 
-    const info = document.getElementById("algorithm-info");
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("open");
 
-    if (!info) {
-        return;
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            menuButton.textContent = isOpen ? "CLOSE" : "MENU";
+        });
     }
 
-    if (step === 1) {
 
-        info.innerHTML = `
-            <h2>01 — COLLECT</h2>
+    /* Dopamine loop interaction */
+    const loopNodes = document.querySelectorAll(".loop-node");
+    const loopInfo = document.querySelector("#loop-info");
 
-            <p>
-                Platforms collect information from interactions
-                such as clicks, likes, searches, views and
-                time spent watching content.
-            </p>
-        `;
+    const loopContent = {
+        1: {
+            title: "01 / SCROLL",
+            text: "A user begins moving through a feed, often looking for something interesting, useful or entertaining."
+        },
+        2: {
+            title: "02 / NEW CONTENT",
+            text: "The platform presents another piece of content before the user has reached a natural stopping point."
+        },
+        3: {
+            title: "03 / REWARD",
+            text: "Something catches the user's attention: a funny video, interesting post, notification or social interaction."
+        },
+        4: {
+            title: "04 / REPEAT",
+            text: "The process begins again. One interaction can lead directly into another."
+        }
+    };
 
+    loopNodes.forEach(node => {
+        node.addEventListener("click", () => {
+
+            loopNodes.forEach(item => item.classList.remove("selected"));
+            node.classList.add("selected");
+
+            const step = node.dataset.loop;
+            const content = loopContent[step];
+
+            if (loopInfo && content) {
+                loopInfo.innerHTML = `
+                    <p class="eyebrow">${content.title}</p>
+                    <p>${content.text}</p>
+                `;
+            }
+        });
+    });
+
+
+    /* Algorithm interaction */
+    const algorithmTabs = document.querySelectorAll(".algorithm-tab");
+    const algorithmLabel = document.querySelector("#algorithm-label");
+    const algorithmTitle = document.querySelector("#algorithm-title");
+    const algorithmText = document.querySelector("#algorithm-text");
+
+    const algorithmContent = {
+        collect: {
+            label: "01 / COLLECT",
+            title: "WHAT DO YOU DO?",
+            text: "Platforms can gather signals from interactions such as clicks, likes, searches, views and time spent with content."
+        },
+        analyze: {
+            label: "02 / ANALYZE",
+            title: "WHAT MIGHT YOU LIKE?",
+            text: "Those signals can be analyzed to estimate interests, preferences and patterns in how a person interacts with content."
+        },
+        recommend: {
+            label: "03 / RECOMMEND",
+            title: "WHAT SHOULD YOU SEE NEXT?",
+            text: "The system can use those predictions to select or rank content that it expects the user may engage with."
+        },
+        measure: {
+            label: "04 / MEASURE",
+            title: "WHAT DID YOU DO WITH IT?",
+            text: "The user's response becomes another signal, feeding the next cycle of collection, analysis and recommendation."
+        }
+    };
+
+    algorithmTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+
+            algorithmTabs.forEach(item => item.classList.remove("active"));
+            tab.classList.add("active");
+
+            const step = tab.dataset.step;
+            const content = algorithmContent[step];
+
+            if (content) {
+                algorithmLabel.textContent = content.label;
+                algorithmTitle.textContent = content.title;
+                algorithmText.textContent = content.text;
+            }
+        });
+    });
+
+
+    /* Instagram like button */
+    const likeButton = document.querySelector(".like-button");
+
+    if (likeButton) {
+        likeButton.addEventListener("click", () => {
+            const liked = likeButton.classList.toggle("liked");
+
+            likeButton.textContent = liked ? "♥" : "♡";
+            likeButton.setAttribute(
+                "aria-pressed",
+                liked ? "true" : "false"
+            );
+        });
     }
 
-    else if (step === 2) {
 
-        info.innerHTML = `
-            <h2>02 — ANALYZE</h2>
+    /* Reflection questions */
+    const questionButtons = document.querySelectorAll(".question-item");
 
-            <p>
-                This information can be used to build a picture
-                of what a user is interested in and how they
-                interact with content.
-            </p>
-        `;
+    questionButtons.forEach(button => {
+        button.addEventListener("click", () => {
 
-    }
+            const answer = button.nextElementSibling;
 
-    else if (step === 3) {
+            if (!answer) {
+                return;
+            }
 
-        info.innerHTML = `
-            <h2>03 — RECOMMEND</h2>
+            button.classList.toggle("open");
+            answer.classList.toggle("open");
+        });
+    });
 
-            <p>
-                The platform can then recommend content that
-                it predicts will keep the user engaged.
-            </p>
-        `;
-
-    }
-
-    else if (step === 4) {
-
-        info.innerHTML = `
-            <h2>04 — MEASURE</h2>
-
-            <p>
-                The user's response provides new information,
-                creating another cycle of collection,
-                analysis and recommendation.
-            </p>
-        `;
-
-    }
-
-}
+});

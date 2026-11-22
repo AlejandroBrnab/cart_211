@@ -1,11 +1,19 @@
 /* =========================================================
    THE ATTENTION TRAP
-   Prototype stylesheet
+   Final prototype stylesheet
    ========================================================= */
 
-/* ---------------------------------------------------------
-   GENERAL
-   --------------------------------------------------------- */
+:root {
+    --bg: #090909;
+    --surface: #141414;
+    --surface-light: #1d1d1d;
+    --text: #f2f1e9;
+    --muted: #9a9a94;
+    --line: #30302d;
+    --green: #c8ff00;
+    --red: #ff5b4d;
+    --max-width: 1400px;
+}
 
 * {
     box-sizing: border-box;
@@ -18,711 +26,1991 @@ html {
 }
 
 body {
-    background: #111111;
-    color: #f2f2e9;
-
+    background: var(--bg);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
-
-    line-height: 1.6;
-
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
+::selection {
+    background: var(--green);
+    color: #000;
+}
 
-/* ---------------------------------------------------------
-   NAVIGATION
-   --------------------------------------------------------- */
+a {
+    color: inherit;
+}
 
-.navbar {
-    width: 100%;
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+    min-height: 76px;
+    padding: 20px 4vw;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    padding: 24px 5%;
-
-    border-bottom: 1px solid #333333;
+    border-bottom: 1px solid var(--line);
 
     position: sticky;
     top: 0;
+    z-index: 100;
 
-    background: rgba(17, 17, 17, 0.95);
-
-    z-index: 10;
+    background: rgba(9, 9, 9, 0.95);
+    backdrop-filter: blur(12px);
 }
 
 .logo {
-    color: #f2f2e9;
-
+    color: var(--text);
     text-decoration: none;
-
-    font-size: 0.85rem;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-}
-
-nav {
-    display: flex;
-
-    gap: 25px;
-}
-
-nav a {
-    color: #999999;
-
-    text-decoration: none;
-
-    font-size: 0.75rem;
-
-    letter-spacing: 1px;
-}
-
-nav a:hover,
-nav a.active {
-    color: #c8ff00;
-}
-
-
-/* ---------------------------------------------------------
-   GENERAL PAGE
-   --------------------------------------------------------- */
-
-main {
-    flex: 1;
-}
-
-.page {
-    width: 90%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    padding: 100px 0;
-}
-
-.label {
-    color: #c8ff00;
-
-    font-family: monospace;
 
     font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+}
 
-    letter-spacing: 2px;
+.logo span {
+    color: var(--green);
+}
 
-    margin-bottom: 30px;
+.site-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.site-nav a {
+    color: var(--muted);
+    text-decoration: none;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    color: var(--green);
+}
+
+.menu-toggle {
+    display: none;
+
+    padding: 9px 12px;
+
+    background: transparent;
+    color: var(--text);
+
+    border: 1px solid var(--line);
+
+    cursor: pointer;
+
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+}
+
+/* =========================
+   GENERAL
+   ========================= */
+
+main {
+    min-height: 100vh;
+}
+
+.page-shell {
+    width: min(92%, var(--max-width));
+    margin: auto;
+    padding: 55px 0 100px;
+}
+
+.page-topline {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+}
+
+.eyebrow {
+    margin-bottom: 20px;
+
+    color: var(--green);
+
+    font-family: monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
 }
 
 h1 {
-    font-size: clamp(3rem, 9vw, 8rem);
+    font-size: clamp(4rem, 10vw, 11rem);
+    line-height: 0.82;
 
-    line-height: 0.9;
+    font-weight: 900;
 
-    letter-spacing: -5px;
+    letter-spacing: -0.07em;
 
-    max-width: 1000px;
+    text-transform: uppercase;
+}
 
-    margin-bottom: 40px;
+h1 em {
+    color: var(--green);
+    font-style: normal;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1.6rem, 3vw, 3.5rem);
+    line-height: 0.95;
 
-    margin-bottom: 20px;
+    font-weight: 900;
 
-    letter-spacing: -0.5px;
+    letter-spacing: -0.04em;
+
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.2rem;
 }
 
 p {
-    color: #bdbdb7;
-
-    max-width: 650px;
+    max-width: 700px;
 
     margin-bottom: 20px;
+
+    color: var(--muted);
 }
 
-.large-text {
-    color: #f2f2e9;
+.hero-intro {
+    max-width: 650px;
 
-    font-size: 2rem;
+    margin-top: 35px;
 
-    max-width: 800px;
+    color: var(--text);
 
-    margin-bottom: 80px;
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+
+    line-height: 1.35;
 }
 
-
-/* ---------------------------------------------------------
-   HERO
-   --------------------------------------------------------- */
-
-.hero {
-    min-height: 90vh;
-
-    width: 90%;
-
-    max-width: 1400px;
-
-    margin: auto;
-
-    padding: 120px 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-}
-
-.hero h1 {
-    font-size: clamp(4rem, 12vw, 11rem);
-
-    margin-bottom: 40px;
-}
-
-.intro {
-    font-size: 1.3rem;
-
-    max-width: 600px;
-}
-
-
-/* ---------------------------------------------------------
-   BUTTON
-   --------------------------------------------------------- */
+/* =========================
+   BUTTONS
+   ========================= */
 
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
 
     width: fit-content;
 
     margin-top: 20px;
 
-    padding: 15px 25px;
+    padding: 15px 18px;
 
-    background: #c8ff00;
+    border: 1px solid var(--text);
 
-    color: #111111;
+    color: var(--text);
 
     text-decoration: none;
 
-    font-weight: bold;
+    font-size: 0.65rem;
+    font-weight: 800;
 
-    font-size: 0.8rem;
+    letter-spacing: 0.12em;
 
-    letter-spacing: 1px;
+    transition: 0.2s ease;
 }
 
 .button:hover {
-    background: #f2f2e9;
+    transform: translateY(-3px);
 }
 
+.button-bright {
+    background: var(--green);
+    border-color: var(--green);
+    color: #000;
+}
 
-/* ---------------------------------------------------------
-   INTRO SECTION
-   --------------------------------------------------------- */
+.button-bright:hover {
+    background: var(--text);
+    border-color: var(--text);
+}
 
-.intro-section {
-    width: 90%;
+/* =========================
+   IMAGE PLACEHOLDERS
+   ========================= */
 
+.image-placeholder {
+    min-height: 390px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    border: 1px dashed #555;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a1a1a 25%,
+            #111 25%,
+            #111 50%,
+            #1a1a1a 50%,
+            #1a1a1a 75%,
+            #111 75%
+        );
+
+    background-size: 22px 22px;
+
+    color: var(--green);
+
+    text-align: center;
+
+    font-family: monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+}
+
+.image-placeholder small {
+    display: block;
+
+    max-width: 280px;
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-family: Arial, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0;
+    line-height: 1.5;
+}
+
+.image-placeholder.tall {
+    min-height: 550px;
+}
+
+.image-placeholder.wide {
+    min-height: 330px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.page-footer {
+    width: min(92%, var(--max-width));
+    margin: auto;
+
+    padding: 35px 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+}
+
+.page-footer a {
+    text-decoration: none;
+}
+
+.page-footer a:hover {
+    color: var(--green);
+}
+
+/* =========================
+   HOME
+   ========================= */
+
+.hero {
+    width: min(92%, var(--max-width));
+    min-height: calc(100vh - 76px);
+
+    margin: auto;
+
+    padding: 65px 0 100px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.75fr;
+
+    gap: 7vw;
+
+    align-items: center;
+}
+
+.hero-meta {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+.hero h1 {
+    font-size: clamp(4.5rem, 12vw, 13rem);
+}
+
+.hero-visual {
+    transform: rotate(2deg);
+}
+
+.scroll-warning {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 4vw;
+
+    color: var(--green);
+
+    font-family: monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+}
+
+.warning-line {
+    height: 1px;
+    background: var(--green);
+}
+
+.intro-block {
+    width: min(85%, 1000px);
+
+    margin: 140px auto;
+
+    display: grid;
+    grid-template-columns: 100px 1fr;
+
+    gap: 50px;
+}
+
+.section-index {
+    color: var(--green);
+
+    font-family: monospace;
+}
+
+.intro-block h2 {
+    max-width: 850px;
+
+    margin-bottom: 35px;
+}
+
+.intro-block p {
+    font-size: 1.05rem;
+}
+
+.manifesto {
+    min-height: 65vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 5vw;
+
+    background: var(--green);
+}
+
+.manifesto p {
+    max-width: 1150px;
+
+    margin: 0;
+
+    color: #000;
+
+    font-size: clamp(4rem, 11vw, 11rem);
+
+    line-height: 0.8;
+
+    font-weight: 900;
+
+    letter-spacing: -0.06em;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+.manifesto span {
+    color: var(--red);
+}
+
+.next-section {
+    width: min(85%, 1100px);
+
+    margin: 120px auto;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.next-section h2 {
+    max-width: 650px;
+}
+
+.circle-arrow {
+    width: 95px;
+    height: 95px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--green);
+    border-radius: 50%;
+
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-size: 2rem;
+
+    transition: 0.2s ease;
+}
+
+.circle-arrow:hover {
+    background: var(--green);
+    color: #000;
+
+    transform: rotate(-25deg);
+}
+
+/* =========================
+   PAGE HERO
+   ========================= */
+
+.page-hero {
+    padding: 100px 0 110px;
+}
+
+.split-hero {
+    display: grid;
+
+    grid-template-columns: 1fr 0.7fr;
+
+    gap: 8vw;
+
+    align-items: center;
+}
+
+/* =========================
+   DOPAMINE LOOP
+   ========================= */
+
+.loop-section {
+    padding-top: 70px;
+
+    border-top: 1px solid var(--line);
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+
+    gap: 30px;
+
+    margin-bottom: 60px;
+}
+
+.section-heading > span {
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: 0.65rem;
+}
+
+.loop {
+    display: grid;
+    grid-template-columns:
+        1fr auto
+        1fr auto
+        1fr auto
+        1fr;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+.loop-node {
+    min-height: 170px;
+
+    border: 1px solid var(--line);
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-weight: 800;
+    letter-spacing: 0.08em;
+
+    transition: 0.2s ease;
+}
+
+.loop-node:hover,
+.loop-node.selected {
+    border-color: var(--green);
+
+    background: var(--green);
+
+    color: #000;
+}
+
+.loop-arrow {
+    color: var(--green);
+
+    font-size: 1.5rem;
+}
+
+.interaction-panel {
+    min-height: 150px;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    background: var(--surface);
+
+    border-left: 3px solid var(--green);
+}
+
+.interaction-panel p {
+    margin-bottom: 0;
+
+    color: var(--text);
+}
+
+/* =========================
+   TWO COLUMN
+   ========================= */
+
+.two-column-text {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8vw;
+
+    margin: 140px 0;
+}
+
+.two-column-text h2 {
+    max-width: 500px;
+}
+
+/* =========================
+   HISTORY
+   ========================= */
+
+.timeline {
+    margin: 20px 0 120px 6vw;
+
+    border-left: 2px solid var(--green);
+}
+
+.timeline-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 120px 1fr 300px;
+
+    gap: 40px;
+
+    padding: 0 0 80px 50px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    top: 3px;
+    left: -7px;
+
+    width: 12px;
+    height: 12px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+}
+
+.timeline-date {
+    color: var(--green);
+
+    font-family: monospace;
+}
+
+.timeline-item h2 {
+    margin-bottom: 20px;
+}
+
+.small-image {
+    min-height: 190px;
+}
+
+/* =========================
+   ATTENTION
+   ========================= */
+
+.attention-diagram {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto
+        1fr auto
+        1fr;
+
+    gap: 18px;
+
+    align-items: stretch;
+
+    margin-bottom: 130px;
+}
+
+.attention-card {
+    min-height: 280px;
+
+    padding: 35px;
+
+    border: 1px solid var(--line);
+
+    background: var(--surface);
+}
+
+.attention-card.highlighted {
+    border-color: var(--green);
+
+    transform: translateY(-20px);
+}
+
+.attention-card span {
+    color: var(--green);
+
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+.attention-card h2 {
+    margin-top: 60px;
+}
+
+.attention-connector {
+    display: grid;
+    place-items: center;
+
+    color: var(--green);
+
+    font-size: 2rem;
+}
+
+/* =========================
+   ALGORITHM
+   ========================= */
+
+.algorithm-section {
+    border: 1px solid var(--line);
+}
+
+.algorithm-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.algorithm-tab {
+    padding: 22px 18px;
+
+    border: 0;
+    border-right: 1px solid var(--line);
+
+    background: var(--surface);
+
+    color: var(--muted);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: monospace;
+    font-size: 0.65rem;
+}
+
+.algorithm-tab:last-child {
+    border-right: 0;
+}
+
+.algorithm-tab:hover,
+.algorithm-tab.active {
+    background: var(--green);
+    color: #000;
+}
+
+.algorithm-display {
+    min-height: 280px;
+
+    padding: 55px;
+}
+
+.algorithm-display h2 {
+    max-width: 750px;
+
+    margin-bottom: 25px;
+}
+
+.algorithm-display p:last-child {
+    color: var(--text);
+
+    font-size: 1.05rem;
+}
+
+.feed-demo {
+    width: min(100%, 800px);
+
+    margin: 100px auto 0;
+}
+
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-family: monospace;
+    font-size: 0.6rem;
+}
+
+.feed-card {
+    border: 1px solid var(--line);
+    border-top: 0;
+
+    background: var(--surface);
+}
+
+.feed-copy {
+    padding: 30px;
+}
+
+.tiny-label {
+    color: var(--green);
+
+    font-family: monospace;
+    font-size: 0.6rem;
+}
+
+/* =========================
+   DESIGN MECHANISMS
+   ========================= */
+
+.mechanisms {
+    display: grid;
+
+    gap: 2px;
+
+    background: var(--line);
+}
+
+.mechanism-card {
+    min-height: 270px;
+
+    padding: 45px 35px;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr 300px;
+
+    gap: 40px;
+
+    align-items: center;
+
+    background: var(--bg);
+
+    transition: background 0.2s ease;
+}
+
+.mechanism-card:hover {
+    background: var(--surface);
+}
+
+.mechanism-number {
+    color: var(--green);
+
+    font-family: monospace;
+}
+
+.mechanism-card h2 {
+    margin-bottom: 18px;
+}
+
+.mechanism-image {
+    min-height: 170px;
+}
+
+.dark-banner {
+    margin: 100px 0 20px;
+
+    padding: 70px 5vw;
+
+    background: var(--surface);
+
+    border: 1px solid var(--line);
+}
+
+.dark-banner p {
     max-width: 1000px;
 
-    margin: 100px auto;
+    color: var(--text);
 
+    font-size: clamp(2rem, 5vw, 5rem);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+.dark-banner span {
+    color: var(--green);
+}
+
+/* =========================
+   TIKTOK
+   ========================= */
+
+.platform-hero {
+    display: grid;
+
+    grid-template-columns: 1fr 380px;
+
+    gap: 10vw;
+
+    align-items: center;
+
+    padding: 100px 0 130px;
+}
+
+.platform-hero h1 {
+    font-size: clamp(6rem, 17vw, 15rem);
+
+    line-height: 0.72;
+}
+
+.platform-hero h1 span {
+    color: var(--red);
+}
+
+.phone-frame {
+    width: 320px;
+    height: 620px;
+
+    margin: auto;
+
+    padding: 14px;
+
+    border: 7px solid var(--text);
+
+    border-radius: 38px;
+
+    background: #050505;
+}
+
+.phone-top {
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--text);
+
+    font-family: monospace;
+    font-size: 0.65rem;
+}
+
+.phone-media {
+    height: 470px;
+
+    min-height: 0;
+
+    border: 0;
+}
+
+.phone-bottom {
+    display: flex;
+    justify-content: space-around;
+
+    padding-top: 15px;
+}
+
+.platform-analysis {
     display: grid;
 
     grid-template-columns: 100px 1fr;
 
-    gap: 40px;
+    gap: 50px;
+
+    padding: 80px 0;
+
+    border-top: 1px solid var(--line);
 }
 
-.section-number {
-    color: #c8ff00;
+.analysis-number {
+    color: var(--green);
 
     font-family: monospace;
-
-    font-size: 1.5rem;
 }
 
+.platform-analysis h2 {
+    max-width: 800px;
 
-/* ---------------------------------------------------------
-   STATEMENT
-   --------------------------------------------------------- */
-
-.statement {
-    min-height: 500px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 50px;
+    margin-bottom: 30px;
 }
 
-.statement p {
-    color: #c8ff00;
+.fake-feed {
+    width: min(100%, 450px);
 
-    font-size: clamp(3rem, 10vw, 9rem);
+    height: 520px;
 
-    font-weight: bold;
+    margin: 30px auto 120px;
 
-    line-height: 0.9;
+    overflow-y: auto;
 
-    max-width: 1000px;
+    border: 1px solid var(--line);
+
+    scroll-snap-type: y mandatory;
 }
 
-.statement.small p {
-    font-size: clamp(2rem, 6vw, 5rem);
-}
+.fake-feed-item {
+    height: 520px;
 
-
-/* ---------------------------------------------------------
-   CONTENT GRID
-   --------------------------------------------------------- */
-
-.content-grid {
     display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 80px;
-
-    align-items: start;
-}
-
-
-/* ---------------------------------------------------------
-   DIAGRAM
-   --------------------------------------------------------- */
-
-.diagram {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-}
-
-.circle {
-    width: 160px;
-
-    height: 160px;
-
-    border: 2px solid #c8ff00;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    color: #c8ff00;
-
-    font-weight: bold;
-}
-
-.arrow {
-    font-size: 2rem;
-
-    color: #c8ff00;
-
-    margin: 10px;
-}
-
-
-/* ---------------------------------------------------------
-   QUOTE
-   --------------------------------------------------------- */
-
-.quote {
-    border-top: 1px solid #333333;
-
-    border-bottom: 1px solid #333333;
-
-    padding: 60px 0;
-
-    margin-top: 100px;
-}
-
-.quote p {
-    color: #f2f2e9;
-
-    font-size: 2rem;
-
-    font-weight: bold;
-}
-
-
-/* ---------------------------------------------------------
-   TIMELINE
-   --------------------------------------------------------- */
-
-.timeline {
-    border-left: 2px solid #c8ff00;
-
-    margin-left: 30px;
-
-    padding-left: 40px;
-}
-
-.timeline-item {
-    margin-bottom: 80px;
-}
-
-.timeline-item span {
-    color: #c8ff00;
-
-    font-family: monospace;
-
-    font-size: 1.2rem;
-}
-
-.timeline-item h2 {
-    margin-top: 10px;
-}
-
-
-/* ---------------------------------------------------------
-   THREE COLUMNS
-   --------------------------------------------------------- */
-
-.three-columns {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.info-card {
-    border: 1px solid #333333;
+    place-items: center;
 
     padding: 30px;
 
-    min-height: 250px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292929 0,
+            #111 60%
+        );
+
+    scroll-snap-align: start;
+
+    font-size: 2rem;
+    font-weight: 900;
 }
 
-.info-card span {
-    color: #c8ff00;
+.fake-feed-item:nth-child(2) {
+    background:
+        radial-gradient(
+            circle at 30% 60%,
+            #35251f 0,
+            #111 60%
+        );
+}
+
+.fake-feed-item:nth-child(3) {
+    background:
+        radial-gradient(
+            circle at 70% 35%,
+            #24341b 0,
+            #111 60%
+        );
+}
+
+.fake-feed-item span {
+    display: block;
+
+    margin-top: 15px;
+
+    color: var(--green);
 
     font-family: monospace;
+    font-size: 0.6rem;
 }
 
+/* =========================
+   INSTAGRAM
+   ========================= */
 
-/* ---------------------------------------------------------
-   ALGORITHM
-   --------------------------------------------------------- */
+.instagram-hero {
+    width: 100%;
+    max-width: 100%;
 
-.algorithm {
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    /*
+       minmax(0, 1fr) prevents the large heading
+       from forcing the whole grid wider than the screen.
+    */
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 500px);
 
-    gap: 10px;
+    gap: clamp(40px, 8vw, 140px);
 
-    margin-bottom: 40px;
+    align-items: center;
+
+    padding: 100px 0 120px;
+
+    overflow: hidden;
 }
 
-.algorithm button {
-    background: transparent;
+.instagram-title {
+    min-width: 0;
+    max-width: 100%;
+}
 
-    color: #f2f2e9;
+.instagram-title h1 {
+    /*
+       Smaller relative maximum + vw scaling.
+       This keeps the word inside its column.
+    */
+    font-size: clamp(4rem, 9vw, 10rem);
 
-    border: 1px solid #555555;
+    line-height: 0.78;
 
-    padding: 20px;
+    max-width: 100%;
+
+    /*
+       Allows the heading to shrink instead
+       of creating horizontal overflow.
+    */
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.instagram-title .hero-intro {
+    max-width: 650px;
+}
+
+.social-post {
+    width: 100%;
+    max-width: 500px;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--line);
+
+    overflow: hidden;
+}
+
+.social-image {
+    width: 100%;
+    min-height: 520px;
+
+    border: 0;
+}
+
+.social-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 5px 4px;
+
+    color: var(--muted);
+
+    flex-wrap: wrap;
+}
+
+.like-button {
+    border: 0;
+
+    background: none;
+
+    color: var(--text);
 
     cursor: pointer;
 
-    text-align: left;
+    font-size: 2rem;
 }
 
-.algorithm button:hover {
-    border-color: #c8ff00;
-
-    color: #c8ff00;
+.like-button.liked {
+    color: var(--red);
 }
 
-.interactive-box {
-    border: 1px solid #333333;
+.notification-demo {
+    display: grid;
 
-    padding: 40px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    min-height: 180px;
+    gap: 12px;
+
+    margin-bottom: 120px;
 }
 
+.notification-card {
+    min-width: 0;
 
-/* ---------------------------------------------------------
-   FEATURE LIST
-   --------------------------------------------------------- */
+    padding: 25px;
 
-.feature-list {
+    border: 1px solid var(--line);
+
+    background: var(--surface);
+
+    transition: 0.2s ease;
+}
+
+.notification-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--green);
+}
+
+.notification-card span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--green);
+
+    font-family: monospace;
+    font-size: 0.6rem;
+}
+
+/* =========================
+   YOUTUBE / FACEBOOK
+   ========================= */
+
+.platform-comparison {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 2px;
-
-    background: #333333;
+    gap: 15px;
 }
 
-.feature-list article {
-    background: #111111;
+.comparison-card {
+    padding: 30px;
 
-    padding: 40px;
+    border: 1px solid var(--line);
 
-    min-height: 250px;
+    background: var(--surface);
 }
 
-.feature-list span {
-    color: #c8ff00;
+.platform-logo {
+    margin-bottom: 25px;
 
-    font-family: monospace;
+    color: var(--green);
+
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
+.comparison-image {
+    min-height: 330px;
 
-/* ---------------------------------------------------------
-   PHONE
-   --------------------------------------------------------- */
-
-.platform-layout {
-    display: grid;
-
-    grid-template-columns: 300px 1fr;
-
-    gap: 100px;
-
-    align-items: center;
+    border: 0;
 }
 
-.phone {
-    width: 260px;
+.comparison-card ul {
+    list-style: none;
 
-    height: 500px;
-
-    border: 5px solid #f2f2e9;
-
-    border-radius: 30px;
-
-    padding: 15px;
-
-    margin: auto;
+    margin-top: 25px;
 }
 
-.phone-screen {
-    height: 100%;
+.comparison-card li {
+    padding: 13px 0;
 
-    border: 1px solid #444444;
+    border-bottom: 1px solid var(--line);
 
-    display: flex;
+    color: var(--muted);
+}
 
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    padding: 20px;
+.comparison-question {
+    padding: 140px 20px 70px;
 
     text-align: center;
 }
 
-.phone-screen p {
-    font-size: 0.8rem;
-
-    color: #f2f2e9;
+.comparison-question h2 {
+    font-size: clamp(2.5rem, 6vw, 6rem);
 }
 
-.fake-video {
-    height: 300px;
+/* =========================
+   ACTION
+   ========================= */
 
-    background: #222222;
+.action-hero {
+    min-height: 75vh;
 
     display: flex;
-
+    flex-direction: column;
     justify-content: center;
 
-    align-items: center;
-
-    color: #c8ff00;
-
-    font-weight: bold;
+    padding: 100px 0;
 }
 
-
-/* ---------------------------------------------------------
-   SOCIAL MEDIA MOCKUP
-   --------------------------------------------------------- */
-
-.social-card {
-    max-width: 400px;
-
-    border: 1px solid #333333;
-
-    padding: 20px;
+.action-hero h1 {
+    font-size: clamp(4rem, 12vw, 12rem);
 }
 
-.fake-post {
-    height: 400px;
-
-    background: #222222;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #c8ff00;
-}
-
-.post-actions {
-    padding-top: 15px;
-
-    color: #f2f2e9;
-}
-
-
-/* ---------------------------------------------------------
-   COMPARISON
-   --------------------------------------------------------- */
-
-.comparison {
+.reflection-section {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 8vw;
+
+    padding: 100px 0;
+
+    border-top: 1px solid var(--line);
+}
+
+.question-list {
+    border-top: 1px solid var(--line);
+}
+
+.question-item {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr 30px;
 
     gap: 20px;
+
+    padding: 28px 0;
+
+    border: 0;
+    border-bottom: 1px solid var(--line);
+
+    background: transparent;
+
+    color: var(--text);
+
+    text-align: left;
+
+    cursor: pointer;
 }
 
-.platform-card {
-    border: 1px solid #333333;
-
-    padding: 40px;
+.question-item:hover {
+    color: var(--green);
 }
 
-.platform-card h2 {
-    color: #c8ff00;
+.question-item span:first-child {
+    color: var(--green);
+
+    font-family: monospace;
 }
 
-.platform-card p {
-    border-bottom: 1px solid #333333;
-
-    padding-bottom: 10px;
+.question-item strong {
+    font-size: 1rem;
 }
 
+.plus {
+    color: var(--green);
 
-/* ---------------------------------------------------------
-   QUESTIONS
-   --------------------------------------------------------- */
+    font-size: 1.4rem;
 
-.reflection {
-    max-width: 800px;
-
-    margin-top: 80px;
+    transition: transform 0.2s ease;
 }
 
-.question {
-    border-top: 1px solid #444444;
-
-    padding: 30px 0;
+.question-item.open .plus {
+    transform: rotate(45deg);
 }
 
-.question p {
-    color: #f2f2e9;
+.question-answer {
+    display: none;
 
-    font-size: 1.5rem;
+    padding: 0 50px 25px 70px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--muted);
 }
 
-.final-message {
-    margin: 100px 0;
-
-    border-left: 4px solid #c8ff00;
-
-    padding-left: 30px;
+.question-answer.open {
+    display: block;
 }
 
+.final-statement {
+    min-height: 70vh;
 
-/* ---------------------------------------------------------
-   FOOTER
-   --------------------------------------------------------- */
+    margin-left: calc((100% - 100vw) / 2);
+    margin-right: calc((100% - 100vw) / 2);
 
-footer {
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 40px 0;
-
-    border-top: 1px solid #333333;
+    padding: 100px 6vw;
 
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    justify-content: space-between;
+    background: var(--green);
+
+    color: #000;
+
+    text-align: center;
 }
 
-footer a {
-    color: #999999;
+.final-statement p {
+    max-width: 1200px;
 
-    text-decoration: none;
+    color: #000;
 
-    font-size: 0.8rem;
+    font-size: clamp(4rem, 11vw, 11rem);
 
-    letter-spacing: 1px;
+    line-height: 0.8;
+
+    font-weight: 900;
+
+    letter-spacing: -0.06em;
+
+    text-transform: uppercase;
 }
 
-footer a:hover {
-    color: #c8ff00;
+.final-statement span {
+    color: var(--red);
 }
 
+.final-statement .button {
+    margin-top: 50px;
 
-/* ---------------------------------------------------------
+    border-color: #000;
+
+    background: #000;
+
+    color: var(--green);
+}
+
+/* =========================
    RESPONSIVE
-   Basic only — this is still a prototype.
-   --------------------------------------------------------- */
+   ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    nav {
+    /* =========================
+       HEADER
+       ========================= */
+
+    .site-nav {
         display: none;
+
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+        right: 0;
+
+        padding: 20px 4vw;
+
+        flex-direction: column;
+
+        background: var(--bg);
+
+        border-bottom: 1px solid var(--line);
     }
 
-    h1 {
-        letter-spacing: -2px;
+    .site-nav.open {
+        display: flex;
     }
 
-    .content-grid,
-    .three-columns,
-    .comparison,
-    .platform-layout {
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* =========================
+       GENERAL LAYOUTS
+       ========================= */
+
+    .hero,
+    .split-hero,
+    .platform-hero,
+    .instagram-hero,
+    .two-column-text,
+    .reflection-section {
         grid-template-columns: 1fr;
     }
 
-    .algorithm {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-visual {
+        order: 2;
+    }
+
+
+    /* =========================
+       HOME
+       ========================= */
+
+    .hero h1 {
+        font-size: clamp(4rem, 17vw, 8rem);
+
+        max-width: 100%;
+    }
+
+    .hero-meta {
+        flex-wrap: wrap;
+
+        gap: 10px 25px;
+    }
+
+    .intro-block {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    /* =========================
+       MANIFESTO
+       ========================= */
+
+    .manifesto p {
+        max-width: 100%;
+
+        font-size: clamp(3.5rem, 14vw, 8rem);
+    }
+
+
+    /* =========================
+       LOOP
+       ========================= */
+
+    .loop {
+        grid-template-columns: 1fr;
+    }
+
+    .loop-arrow {
+        transform: rotate(90deg);
+
+        justify-self: center;
+    }
+
+
+    /* =========================
+       SECTION HEADINGS
+       ========================= */
+
+    .section-heading {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =========================
+       ATTENTION DIAGRAM
+       ========================= */
+
+    .attention-diagram {
+        grid-template-columns: 1fr;
+    }
+
+    .attention-connector {
+        transform: rotate(90deg);
+
+        min-height: 40px;
+    }
+
+    .attention-card.highlighted {
+        transform: none;
+    }
+
+
+    /* =========================
+       ALGORITHM
+       ========================= */
+
+    .algorithm-tabs {
         grid-template-columns: 1fr 1fr;
     }
 
-    .feature-list {
+    .algorithm-tab {
+        min-width: 0;
+    }
+
+    .algorithm-tab:nth-child(2) {
+        border-right: 0;
+    }
+
+    .algorithm-display {
+        padding: 40px 30px;
+    }
+
+
+    /* =========================
+       TIMELINE
+       ========================= */
+
+    .timeline {
+        margin-left: 0;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding-left: 35px;
+    }
+
+    .timeline-item h2 {
+        font-size: clamp(2rem, 8vw, 4rem);
+    }
+
+
+    /* =========================
+       DESIGN MECHANISMS
+       ========================= */
+
+    .mechanism-card {
+        grid-template-columns: 50px 1fr;
+
+        gap: 25px;
+    }
+
+    .mechanism-image {
+        grid-column: 2;
+
+        width: 100%;
+    }
+
+
+    /* =========================
+       TIKTOK
+       ========================= */
+
+    .platform-hero {
+        gap: 60px;
+    }
+
+    .platform-hero h1 {
+        font-size: clamp(5rem, 20vw, 9rem);
+
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+    .phone-frame {
+        width: 280px;
+        height: 560px;
+
+        margin: 0 auto;
+    }
+
+    .phone-media {
+        height: 415px;
+    }
+
+    .platform-analysis {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    /* =========================
+       INSTAGRAM
+       ========================= */
+
+    /*
+       Keep the desktop Instagram layout intact.
+       On smaller screens it becomes one column.
+    */
+
+    .instagram-hero {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+        width: 100%;
+
+        overflow: visible;
+    }
+
+    .instagram-title {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .instagram-title h1 {
+        width: 100%;
+
+        max-width: 100%;
+
+        /*
+           This is the important part for
+           "INSTAGRAM" on smaller screens.
+        */
+        font-size: clamp(3.5rem, 16vw, 8rem);
+
+        line-height: 0.78;
+
+        overflow-wrap: break-word;
+    }
+
+    .social-post {
+        width: 100%;
+
+        max-width: 500px;
+
+        margin: 0 auto;
+    }
+
+    .social-image {
+        width: 100%;
+
+        min-height: 400px;
+    }
+
+    .notification-demo {
         grid-template-columns: 1fr;
     }
 
-    .intro-section {
+
+    /* =========================
+       YOUTUBE / FACEBOOK
+       ========================= */
+
+    .platform-comparison {
         grid-template-columns: 1fr;
     }
 
-    .platform-layout {
+
+    /* =========================
+       ACTION
+       ========================= */
+
+    .reflection-section {
+        grid-template-columns: 1fr;
+
         gap: 50px;
     }
 
+    .question-item {
+        min-width: 0;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    .page-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 550px) {
+
+    /* =========================
+       GENERAL
+       ========================= */
+
+    .page-shell {
+        width: 90%;
+    }
+
+    .page-topline {
+        font-size: 0.55rem;
+
+        gap: 15px;
+    }
+
+
+    /* =========================
+       TYPOGRAPHY
+       ========================= */
+
+    h1 {
+        /*
+           Smaller than the previous version so
+           large words don't force horizontal overflow.
+        */
+        font-size: clamp(3rem, 16vw, 6rem);
+
+        line-height: 0.82;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =========================
+       HOME
+       ========================= */
+
+    .hero {
+        width: 90%;
+
+        padding-top: 45px;
+    }
+
+    .hero-meta {
+        font-size: 0.52rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.5rem, 17vw, 6.5rem);
+    }
+
+
+    /* =========================
+       MANIFESTO
+       ========================= */
+
+    .manifesto p,
+    .final-statement p {
+        font-size: clamp(3rem, 15vw, 6rem);
+    }
+
+
+    /* =========================
+       IMAGE PLACEHOLDERS
+       ========================= */
+
+    .image-placeholder {
+        min-height: 280px;
+
+        padding: 20px;
+    }
+
+    .image-placeholder.tall {
+        min-height: 400px;
+    }
+
+
+    /* =========================
+       ALGORITHM
+       ========================= */
+
+    .algorithm-display {
+        padding: 30px 20px;
+    }
+
+    .algorithm-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .algorithm-tab {
+        border-right: 0;
+
+        border-bottom: 1px solid var(--line);
+    }
+
+
+    /* =========================
+       DESIGN MECHANISMS
+       ========================= */
+
+    .mechanism-card {
+        grid-template-columns: 1fr;
+
+        padding: 30px 20px;
+    }
+
+    .mechanism-image {
+        grid-column: auto;
+    }
+
+
+    /* =========================
+       TIKTOK
+       ========================= */
+
+    .platform-hero h1 {
+        font-size: clamp(4.5rem, 20vw, 7rem);
+    }
+
+    .phone-frame {
+        width: min(82vw, 280px);
+
+        height: min(150vw, 560px);
+    }
+
+    .phone-media {
+        height: calc(min(150vw, 560px) - 145px);
+    }
+
+
+    /* =========================
+       INSTAGRAM
+       ========================= */
+
+    .instagram-hero {
+        gap: 40px;
+    }
+
+    .instagram-title h1 {
+        /*
+           At 375px this is about 60px,
+           which keeps "INSTAGRAM" inside
+           the available width.
+        */
+        font-size: clamp(3rem, 16vw, 6rem);
+
+        line-height: 0.8;
+    }
+
+    .social-post {
+        width: 100%;
+
+        padding: 10px;
+    }
+
+    .social-image {
+        min-height: 330px;
+    }
+
+    .social-actions {
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* =========================
+       YOUTUBE / FACEBOOK
+       ========================= */
+
+    .comparison-card {
+        padding: 22px;
+    }
+
+    .comparison-image {
+        min-height: 250px;
+    }
+
+    .comparison-question {
+        padding: 80px 10px 50px;
+    }
+
+
+    /* =========================
+       ACTION
+       ========================= */
+
+    .action-hero {
+        min-height: 60vh;
+
+        padding: 60px 0;
+    }
+
+    .action-hero h1 {
+        font-size: clamp(3.5rem, 17vw, 6rem);
+    }
+
+    .question-item {
+        grid-template-columns: 35px 1fr 20px;
+
+        gap: 10px;
+    }
+
+    .question-answer {
+        padding-left: 45px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    .page-footer {
+        font-size: 0.55rem;
+    }
+
+    /* =========================
+   FIX MOBILE PAGE HEADINGS
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .page-hero h1,
+    .split-hero h1,
+    .platform-hero h1,
+    .instagram-title h1,
+    .action-hero h1,
+    .hero h1 {
+        max-width: 100%;
+
+        font-size: clamp(2.8rem, 11vw, 5.5rem);
+
+        line-height: 0.85;
+
+        letter-spacing: -0.06em;
+
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .page-hero h1,
+    .split-hero h1,
+    .platform-hero h1,
+    .instagram-title h1,
+    .action-hero h1,
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(2.3rem, 10vw, 3.8rem);
+
+        line-height: 0.88;
+
+        letter-spacing: -0.055em;
+
+        overflow-wrap: anywhere;
+    }
+}
 }

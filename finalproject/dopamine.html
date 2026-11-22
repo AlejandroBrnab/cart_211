@@ -1,102 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>The Dopamine Loop</title>
-
+    <title>The Dopamine Loop — The Attention Trap</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<header class="navbar">
-
-    <a href="index.html" class="logo">
-        THE ATTENTION TRAP
-    </a>
-
-    <nav>
+<header class="site-header">
+    <a class="logo" href="index.html">THE ATTENTION TRAP<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
+    <nav class="site-nav">
         <a href="index.html">HOME</a>
         <a href="dopamine.html" class="active">THE PROBLEM</a>
         <a href="algorithm.html">ALGORITHMS</a>
         <a href="tiktok.html">PLATFORMS</a>
         <a href="action.html">TAKE ACTION</a>
     </nav>
-
 </header>
 
-<main class="page">
+<main class="page-shell">
+    <div class="page-topline"><span>02 / 10</span><span>THE PROBLEM</span></div>
 
-    <p class="label">02 / THE PROBLEM</p>
-
-    <h1>THE DOPAMINE LOOP</h1>
-
-    <p class="large-text">
-        Scroll. Watch. Like. Repeat.
-    </p>
-
-    <section class="content-grid">
-
+    <section class="page-hero split-hero">
         <div>
-
-            <h2>THE IDEA</h2>
-
-            <p>
-                Social media platforms constantly provide new
-                content, notifications and interactions.
-            </p>
-
-            <p>
-                Each interaction can create anticipation for
-                what comes next, encouraging users to continue
-                checking and scrolling.
-            </p>
-
+            <p class="eyebrow">REWARD / ANTICIPATION / REPETITION</p>
+            <h1>THE<br><em>DOPAMINE</em><br>LOOP.</h1>
         </div>
-
-        <div class="diagram">
-
-            <div class="circle">
-                SCROLL
-            </div>
-
-            <div class="arrow">↓</div>
-
-            <div class="circle">
-                REWARD
-            </div>
-
-            <div class="arrow">↓</div>
-
-            <div class="circle">
-                REPEAT
-            </div>
-
+        <div class="image-placeholder">
+            <span>IMAGE PLACEHOLDER</span>
+            <small>Suggested: abstract phone notification / repeated scrolling gesture</small>
         </div>
-
     </section>
 
-    <section class="quote">
-        <p>
-            "JUST ONE MORE SCROLL."
-        </p>
+    <section class="loop-section">
+        <div class="section-heading">
+            <span>HOW IT FEELS</span>
+            <h2>JUST ONE MORE SCROLL.</h2>
+        </div>
+
+        <div class="loop">
+            <button class="loop-node" data-loop="1">SCROLL</button>
+            <span class="loop-arrow">→</span>
+            <button class="loop-node" data-loop="2">NEW CONTENT</button>
+            <span class="loop-arrow">→</span>
+            <button class="loop-node" data-loop="3">REWARD</button>
+            <span class="loop-arrow">→</span>
+            <button class="loop-node" data-loop="4">REPEAT</button>
+        </div>
+
+        <div id="loop-info" class="interaction-panel">
+            <p class="eyebrow">SELECT A STEP</p>
+            <p>Click the loop to reveal a short explanation.</p>
+        </div>
     </section>
 
+    <section class="two-column-text">
+        <div>
+            <p class="eyebrow">THE IDEA</p>
+            <h2>THE NEXT THING IS ALWAYS WAITING.</h2>
+        </div>
+        <div>
+            <p>
+                Social platforms can continuously present new content,
+                notifications and interactions. The important point for
+                this project is not that every use of social media is
+                automatically harmful, but that these systems can encourage
+                repeated engagement.
+            </p>
+            <p>
+                The visitor is invited to notice the difference between
+                intentionally choosing to use a platform and automatically
+                continuing to use it.
+            </p>
+        </div>
+    </section>
 </main>
 
-<footer>
-
+<footer class="page-footer">
     <a href="index.html">← PREVIOUS</a>
-
     <a href="history.html">NEXT →</a>
-
 </footer>
 
 <script src="js/script.js"></script>
-
 </body>
-
 </html>

@@ -1,114 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>YouTube & Facebook</title>
-
+    <title>YouTube & Facebook — The Attention Trap</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
-<header class="navbar">
-
-    <a href="index.html" class="logo">
-        THE ATTENTION TRAP
-    </a>
-
-    <nav>
+<header class="site-header">
+    <a class="logo" href="index.html">THE ATTENTION TRAP<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
+    <nav class="site-nav">
         <a href="index.html">HOME</a>
         <a href="dopamine.html">THE PROBLEM</a>
         <a href="algorithm.html">ALGORITHMS</a>
         <a href="youtube-facebook.html" class="active">PLATFORMS</a>
         <a href="action.html">TAKE ACTION</a>
     </nav>
-
 </header>
 
-<main class="page">
+<main class="page-shell">
+    <div class="page-topline"><span>09 / 10</span><span>PLATFORMS</span></div>
 
-    <p class="label">09 / PLATFORMS</p>
-
-    <h1>TWO PLATFORMS.</h1>
-
-    <p class="large-text">
-        DIFFERENT EXPERIENCES. SIMILAR MECHANISMS.
-    </p>
-
-    <section class="comparison">
-
-        <div class="platform-card">
-
-            <h2>YOUTUBE</h2>
-
-            <p>
-                Recommendations
-            </p>
-
-            <p>
-                Autoplay
-            </p>
-
-            <p>
-                Shorts
-            </p>
-
-            <p>
-                Watch history
-            </p>
-
-        </div>
-
-        <div class="platform-card">
-
-            <h2>FACEBOOK</h2>
-
-            <p>
-                Personalized feed
-            </p>
-
-            <p>
-                Notifications
-            </p>
-
-            <p>
-                Suggested content
-            </p>
-
-            <p>
-                Social interactions
-            </p>
-
-        </div>
-
+    <section class="page-hero">
+        <p class="eyebrow">COMPARISON</p>
+        <h1>TWO PLATFORMS.<br><em>ONE ATTENTION GAME?</em></h1>
     </section>
 
-    <section class="quote">
+    <section class="platform-comparison">
+        <article class="comparison-card youtube">
+            <div class="platform-logo">YOUTUBE</div>
+            <div class="image-placeholder comparison-image">
+                <span>IMAGE</span>
+                <small>Suggested: YouTube home/recommendation feed</small>
+            </div>
+            <ul>
+                <li>Recommendations</li>
+                <li>Autoplay</li>
+                <li>Short-form video</li>
+                <li>Watch history</li>
+            </ul>
+        </article>
 
-        <p>
-            THE PLATFORM CHANGES.<br>
-            THE ATTENTION GAME REMAINS.
-        </p>
-
+        <article class="comparison-card facebook">
+            <div class="platform-logo">FACEBOOK</div>
+            <div class="image-placeholder comparison-image">
+                <span>IMAGE</span>
+                <small>Suggested: Facebook feed / notifications</small>
+            </div>
+            <ul>
+                <li>Personalized feed</li>
+                <li>Notifications</li>
+                <li>Suggested content</li>
+                <li>Social interactions</li>
+            </ul>
+        </article>
     </section>
 
+    <section class="comparison-question">
+        <p class="eyebrow">LOOK CLOSER</p>
+        <h2>THE INTERFACE CHANGES.<br>THE ATTENTION MECHANISMS REPEAT.</h2>
+    </section>
 </main>
 
-<footer>
-
+<footer class="page-footer">
     <a href="instagram.html">← PREVIOUS</a>
-
     <a href="action.html">NEXT →</a>
-
 </footer>
 
 <script src="js/script.js"></script>
-
 </body>
-
 </html>

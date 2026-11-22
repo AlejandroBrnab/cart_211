@@ -1,100 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>How We Got Here</title>
-
+    <title>How We Got Here — The Attention Trap</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
-<header class="navbar">
-
-    <a href="index.html" class="logo">
-        THE ATTENTION TRAP
-    </a>
-
-    <nav>
+<header class="site-header">
+    <a class="logo" href="index.html">THE ATTENTION TRAP<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
+    <nav class="site-nav">
         <a href="index.html">HOME</a>
-        <a href="dopamine.html">THE PROBLEM</a>
+        <a href="dopamine.html" class="active">THE PROBLEM</a>
         <a href="algorithm.html">ALGORITHMS</a>
         <a href="tiktok.html">PLATFORMS</a>
         <a href="action.html">TAKE ACTION</a>
     </nav>
-
 </header>
 
-<main class="page">
+<main class="page-shell">
+    <div class="page-topline"><span>03 / 10</span><span>THE PROBLEM</span></div>
 
-    <p class="label">03 / THE PROBLEM</p>
-
-    <h1>HOW WE GOT HERE</h1>
-
-    <p class="large-text">
-        Social media didn't become what it is overnight.
-    </p>
-
-    <section class="timeline">
-
-        <div class="timeline-item">
-
-            <span>2000s</span>
-
-            <h2>EARLY SOCIAL NETWORKS</h2>
-
-            <p>
-                Platforms such as Facebook changed how people
-                connected online.
-            </p>
-
-        </div>
-
-        <div class="timeline-item">
-
-            <span>2010s</span>
-
-            <h2>THE SMARTPHONE ERA</h2>
-
-            <p>
-                Social media moved from the computer into our
-                pockets.
-            </p>
-
-        </div>
-
-        <div class="timeline-item">
-
-            <span>2020s</span>
-
-            <h2>THE ALGORITHMIC FEED</h2>
-
-            <p>
-                Personalized recommendations became central
-                to how we consume content.
-            </p>
-
-        </div>
-
+    <section class="page-hero">
+        <p class="eyebrow">A SHORT HISTORY</p>
+        <h1>HOW WE<br><em>GOT HERE.</em></h1>
+        <p class="hero-intro narrow">
+            Social media did not become an always-present part of everyday
+            life overnight. The experience changed as the technology changed.
+        </p>
     </section>
 
+    <section class="timeline">
+        <article class="timeline-item">
+            <div class="timeline-date">2000s</div>
+            <div>
+                <h2>THE SOCIAL NETWORK</h2>
+                <p>
+                    Online profiles and social networks made it possible to
+                    maintain relationships and share personal updates online.
+                </p>
+            </div>
+            <div class="image-placeholder small-image">
+                <span>IMAGE</span>
+                <small>Suggested: early social-network interface</small>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-date">2010s</div>
+            <div>
+                <h2>THE SMARTPHONE</h2>
+                <p>
+                    Social media moved from the computer into a device that
+                    could follow us almost everywhere.
+                </p>
+            </div>
+            <div class="image-placeholder small-image">
+                <span>IMAGE</span>
+                <small>Suggested: early smartphone / app icons</small>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-date">2020s</div>
+            <div>
+                <h2>THE ALGORITHMIC FEED</h2>
+                <p>
+                    Personalized recommendations became central to how many
+                    people discover videos, news, products and conversations.
+                </p>
+            </div>
+            <div class="image-placeholder small-image">
+                <span>IMAGE</span>
+                <small>Suggested: modern vertical social feed</small>
+            </div>
+        </article>
+    </section>
+
+    <section class="full-width-statement">
+        <p>THE FEED<br><span>FOLLOWED US.</span></p>
+    </section>
 </main>
 
-<footer>
-
+<footer class="page-footer">
     <a href="dopamine.html">← PREVIOUS</a>
-
     <a href="attention.html">NEXT →</a>
-
 </footer>
 
 <script src="js/script.js"></script>
-
 </body>
-
 </html>

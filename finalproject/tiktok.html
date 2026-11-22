@@ -1,96 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>TikTok</title>
-
+    <title>TikTok — The Attention Trap</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 <body>
 
-<header class="navbar">
-
-    <a href="index.html" class="logo">
-        THE ATTENTION TRAP
-    </a>
-
-    <nav>
+<header class="site-header">
+    <a class="logo" href="index.html">THE ATTENTION TRAP<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">MENU</button>
+    <nav class="site-nav">
         <a href="index.html">HOME</a>
         <a href="dopamine.html">THE PROBLEM</a>
         <a href="algorithm.html">ALGORITHMS</a>
         <a href="tiktok.html" class="active">PLATFORMS</a>
         <a href="action.html">TAKE ACTION</a>
     </nav>
-
 </header>
 
-<main class="page platform-page">
+<main class="page-shell platform-page">
+    <div class="page-topline"><span>07 / 10</span><span>PLATFORM / TIKTOK</span></div>
 
-    <p class="label">07 / PLATFORM</p>
-
-    <h1>TIKTOK</h1>
-
-    <p class="large-text">
-        THE ENDLESS FEED
-    </p>
-
-    <section class="platform-layout">
-
-        <div class="phone">
-
-            <div class="phone-screen">
-
-                <p>FOR YOU</p>
-
-                <div class="fake-video">
-                    VIDEO
-                </div>
-
-                <p>
-                    ↓ SCROLL FOR MORE
-                </p>
-
-            </div>
-
-        </div>
-
+    <section class="platform-hero">
         <div>
-
-            <h2>WHY DOES IT WORK?</h2>
-
-            <p>
-                TikTok's short-form video format makes it
-                easy to move from one piece of content to
-                the next.
+            <p class="eyebrow">SHORT FORM / PERSONALIZATION / FEED</p>
+            <h1>TIK<br>TOK<span>.</span></h1>
+            <p class="hero-intro narrow">
+                A platform built around a personalized stream of short-form video.
             </p>
-
-            <p>
-                Personalized recommendations can make the
-                feed feel increasingly relevant to each user.
-            </p>
-
         </div>
 
+        <div class="phone-frame">
+            <div class="phone-top">FOR YOU</div>
+            <div class="phone-media image-placeholder">
+                <span>VIDEO</span>
+                <small>Suggested: abstract short-video still</small>
+            </div>
+            <div class="phone-bottom">
+                <span>♡</span><span>○</span><span>↗</span>
+            </div>
+        </div>
     </section>
 
+    <section class="platform-analysis">
+        <div class="analysis-number">01</div>
+        <div>
+            <p class="eyebrow">THE EXPERIENCE</p>
+            <h2>YOU DON'T HAVE TO SEARCH FOR THE NEXT VIDEO.</h2>
+            <p>
+                The feed continuously presents another piece of content.
+                The recommendation system can adapt to signals from
+                previous interactions, making the experience highly personal.
+            </p>
+        </div>
+    </section>
+
+    <section class="scroll-demo">
+        <p class="eyebrow">TRY THE INTERACTION</p>
+        <div class="fake-feed">
+            <div class="fake-feed-item">VIDEO 01<br><span>SWIPE ↓</span></div>
+            <div class="fake-feed-item">VIDEO 02<br><span>SWIPE ↓</span></div>
+            <div class="fake-feed-item">VIDEO 03<br><span>SWIPE ↓</span></div>
+        </div>
+    </section>
 </main>
 
-<footer>
-
+<footer class="page-footer">
     <a href="design.html">← PREVIOUS</a>
-
     <a href="instagram.html">NEXT →</a>
-
 </footer>
 
 <script src="js/script.js"></script>
-
 </body>
-
 </html>
