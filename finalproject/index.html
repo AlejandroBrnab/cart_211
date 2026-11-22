@@ -42,9 +42,32 @@
             </a>
         </div>
 
-        <div class="hero-visual image-placeholder tall">
-            <span>IMAGE PLACEHOLDER</span>
-            <small>Suggested: crowded metro / people looking at phones</small>
+        <div class="hero-visual" style="
+            width: 165%;
+            height: 550px;
+            overflow: hidden;
+            transform: rotate(2deg);
+            position: relative;
+            margin-left: -12.5%;
+        ">
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="People using smartphones"
+                style="
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                "
+            >
+                <source src="images/video.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
         </div>
     </section>
 
