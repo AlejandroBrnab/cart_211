@@ -110,19 +110,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-
-    /* Instagram like button */
+    // Instagram-like interaction
     const likeButton = document.querySelector(".like-button");
+    const likeCount = document.querySelector(".like-count");
 
-    if (likeButton) {
-        likeButton.addEventListener("click", () => {
-            const liked = likeButton.classList.toggle("liked");
+    if (likeButton && likeCount) {
+        let likes = 1248;
+        let isLiked = false;
 
-            likeButton.textContent = liked ? "♥" : "♡";
-            likeButton.setAttribute(
-                "aria-pressed",
-                liked ? "true" : "false"
-            );
+        likeButton.addEventListener("click", function () {
+            if (isLiked) {
+                // Remove the like
+                likes--;
+                likeButton.textContent = "♡";
+                isLiked = false;
+            } else {
+                // Add the like
+                likes++;
+                likeButton.textContent = "♥";
+                isLiked = true;
+            }
+
+            // Update the displayed number
+            likeCount.textContent = likes.toLocaleString();
+
+            // Update accessibility state
+            likeButton.setAttribute("aria-pressed", isLiked);
         });
     }
 

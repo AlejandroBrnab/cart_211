@@ -34,9 +34,21 @@
 
         <div class="phone-frame">
             <div class="phone-top">FOR YOU</div>
-            <div class="phone-media image-placeholder">
-                <span>VIDEO</span>
-                <small>Suggested: abstract short-video still</small>
+            <div class="phone-media" style="overflow: hidden;">
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    style="
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    "
+                >
+                    <source src="images/tiktok.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="phone-bottom">
                 <span>♡</span><span>○</span><span>↗</span>
@@ -59,10 +71,104 @@
 
     <section class="scroll-demo">
         <p class="eyebrow">TRY THE INTERACTION</p>
-        <div class="fake-feed">
-            <div class="fake-feed-item">VIDEO 01<br><span>SWIPE ↓</span></div>
-            <div class="fake-feed-item">VIDEO 02<br><span>SWIPE ↓</span></div>
-            <div class="fake-feed-item">VIDEO 03<br><span>SWIPE ↓</span></div>
+
+        <!-- Phone frame -->
+        <div style="
+            width: 340px;
+            max-width: 100%;
+            height: 650px;
+            margin: 0 auto;
+            padding: 12px;
+            border: 3px solid #444;
+            border-radius: 38px;
+            background: #111;
+            box-shadow: 0 0 0 5px #222;
+            overflow: hidden;
+            box-sizing: border-box;
+        ">
+
+            <!-- Phone screen -->
+            <div style="
+                width: 100%;
+                height: 100%;
+                border-radius: 27px;
+                overflow: hidden;
+                background: #000;
+                position: relative;
+            ">
+
+                <!-- Top bar -->
+                <div style="
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                ">
+                    FOR YOU
+                </div>
+
+                <!-- Scrollable videos -->
+                <div style="
+                    height: calc(100% - 45px);
+                    overflow-y: auto;
+                    scroll-snap-type: y mandatory;
+                    scrollbar-width: none;
+                ">
+
+                    <div style="
+                        width: 100%;
+                        height: 100%;
+                        min-height: 100%;
+                        scroll-snap-align: start;
+                        overflow: hidden;
+                    ">
+                        <video autoplay muted loop playsinline style="
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        ">
+                            <source src="images/feed1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div style="
+                        width: 100%;
+                        height: 100%;
+                        min-height: 100%;
+                        scroll-snap-align: start;
+                        overflow: hidden;
+                    ">
+                        <video autoplay muted loop playsinline style="
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        ">
+                            <source src="images/feed2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div style="
+                        width: 100%;
+                        height: 100%;
+                        min-height: 100%;
+                        scroll-snap-align: start;
+                        overflow: hidden;
+                    ">
+                        <video autoplay muted loop playsinline style="
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        ">
+                            <source src="images/feed3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 </main>
