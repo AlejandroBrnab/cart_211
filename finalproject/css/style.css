@@ -868,7 +868,7 @@ p {
 }
 
 .instagram-title h1 {
-    font-size: clamp(4rem, 9vw, 10rem);
+    font-size: clamp(4rem, 8vw, 10rem);
     line-height: 0.78;
     max-width: 100%;
     overflow-wrap: break-word;
